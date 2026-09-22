@@ -1,0 +1,4 @@
+clean
+prepare
+play a game
+sweep the floor
