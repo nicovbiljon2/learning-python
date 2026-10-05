@@ -1,4 +1,5 @@
 clean
 play a game
 sweep the floor
-play soccer
+clean the bag
+go for a swim
