@@ -3,3 +3,4 @@ play a game
 sweep the floor
 clean the bag
 go for a swim
+make pizza

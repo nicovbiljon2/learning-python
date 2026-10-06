@@ -1,3 +1,8 @@
+def get_todos():
+    with open("todos.txt", "r") as file_local:
+        todos_local = file_local.readlines()
+    return todos_local
+
 
 while True:
     # Get user input and stip space characters from it
@@ -8,8 +13,7 @@ while True:
         # todo = input("Enter a todo: ") + "\n"
         todo = user_action[4:] # list slicing operation
 
-        with open("todos.txt", "r") as file:
-            todos = file.readlines()
+        todos = get_todos()
 
         todos.append(todo + "\n") # append the user input to the todos list
 
@@ -17,8 +21,7 @@ while True:
             file.writelines(todos)
 
     elif user_action.startswith("show"):
-        with open("todos.txt", "r") as file:
-            todos = file.readlines()
+        todos = get_todos()
 
         # new_todos = [item.strip("\n") for item in todos] # list comprehension
 
@@ -33,8 +36,7 @@ while True:
             number = int(user_action[5:])
             number = number - 1
 
-            with open("todos.txt", "r") as file:
-                todos = file.readlines()
+            todos = get_todos()
 
             new_todo = input("Enter a new todo: ")
             todos[number] = new_todo + "\n"
@@ -50,8 +52,7 @@ while True:
         try:
             number = int(user_action[9:])
 
-            with open("todos.txt", "r") as file:
-                todos = file.readlines()
+            todos = get_todos()
 
             index = number - 1
             todo_to_remove = todos[index].strip("\n")
